@@ -5,7 +5,6 @@ import 'package:bmi_calculator/cards/icon_content.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const double reusableCardsheight = 200;
-const double reusableCardswidth = 200;
 const Color bottomContainerColor = Color.fromARGB(255, 245, 1, 0);
 
 class InputPage extends StatefulWidget {
@@ -16,6 +15,9 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color _maleCardColor = Colors.indigoAccent;
+  Color _femaleCardColor = Colors.pinkAccent;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,25 +35,44 @@ class _InputPageState extends State<InputPage> {
               Row(
                 children: [
                   Expanded(
-                    child: ReusableCards(
-                      cardChild: IconContent(
-                        incomingIcon: Icons.male,
-                        incomingIconName: "MALE",
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _maleCardColor = _maleCardColor == Colors.indigoAccent
+                              ? Colors.indigo
+                              : Colors.indigoAccent;
+                          _femaleCardColor = Colors.pinkAccent;
+                        });
+                      },
+                      child: ReusableCards(
+                        cardChild: IconContent(
+                          incomingIcon: Icons.male,
+                          incomingIconName: "MALE",
+                        ),
+                        height: reusableCardsheight,
+                        incomingColor: _maleCardColor,
                       ),
-                      width: reusableCardsheight,
-                      height: reusableCardsheight,
-                      incomingColor: Colors.blue,
                     ),
                   ),
                   Expanded(
-                    child: ReusableCards(
-                      cardChild: IconContent(
-                        incomingIcon: Icons.female,
-                        incomingIconName: "FEMALE",
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _femaleCardColor =
+                              _femaleCardColor == Colors.pinkAccent
+                                  ? Colors.pink
+                                  : Colors.pinkAccent;
+                          _maleCardColor = Colors.indigoAccent;
+                        });
+                      },
+                      child: ReusableCards(
+                        cardChild: IconContent(
+                          incomingIcon: Icons.female,
+                          incomingIconName: "FEMALE",
+                        ),
+                        height: reusableCardsheight,
+                        incomingColor: _femaleCardColor,
                       ),
-                      width: reusableCardsheight,
-                      incomingColor: Colors.pink,
-                      height: reusableCardsheight,
                     ),
                   ),
                 ],
