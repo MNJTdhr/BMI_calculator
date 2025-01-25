@@ -1,6 +1,7 @@
 // lib/screens/input_page.dart
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/cards/reusable_cards.dart';
+import 'package:bmi_calculator/cards/icon_content.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const double reusableCardsheight = 200;
@@ -33,28 +34,9 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCards(
-                      cardChild: Container(
-                        margin: EdgeInsets.all(20),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Icon(Icons.male,
-                                size: 100,
-                              ),
-                              SizedBox(
-                                height: 7,
-                              ),
-                              Text(
-                                "Male",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                      cardChild: IconContent(
+                        incomingIcon: Icons.male,
+                        incomingIconName: "MALE",
                       ),
                       width: reusableCardsheight,
                       height: reusableCardsheight,
@@ -63,29 +45,9 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCards(
-                      cardChild: Container(
-                        margin: EdgeInsets.all(20),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Icon(
-                                Icons.female,
-                                size: 100,
-                              ),
-                              SizedBox(
-                                height: 7,
-                              ),
-                              Text(
-                                "Female",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                      cardChild: IconContent(
+                        incomingIcon: Icons.female,
+                        incomingIconName: "FEMALE",
                       ),
                       width: reusableCardsheight,
                       incomingColor: Colors.pink,
