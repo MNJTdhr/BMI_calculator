@@ -39,8 +39,11 @@ class _InputPageState extends State<InputPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Icon(
-                                Icons.male,
+                              Icon(Icons.male,
+                                size: 100,
+                              ),
+                              SizedBox(
+                                height: 7,
                               ),
                               Text(
                                 "Male",
@@ -66,7 +69,13 @@ class _InputPageState extends State<InputPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Icon(Icons.female),
+                              Icon(
+                                Icons.female,
+                                size: 100,
+                              ),
+                              SizedBox(
+                                height: 7,
+                              ),
                               Text(
                                 "Female",
                                 style: TextStyle(
@@ -88,9 +97,7 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child: ReusableCards(
                   cardChild: Column(
-                    children: [
-                      
-                    ],
+                    children: [],
                   ),
                   height: reusableCardsheight,
                 ),
@@ -100,9 +107,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCards(
                       cardChild: Column(
-                        children: [
-                          
-                        ],
+                        children: [],
                       ),
                       width: reusableCardsheight,
                       height: reusableCardsheight,
@@ -111,9 +116,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCards(
                       cardChild: Column(
-                        children: [
-                          
-                        ],
+                        children: [],
                       ),
                       width: reusableCardsheight,
                       height: reusableCardsheight,
@@ -123,9 +126,7 @@ class _InputPageState extends State<InputPage> {
               ),
               ReusableCards(
                 cardChild: Column(
-                  children: [
-                    
-                  ],
+                  children: [],
                 ),
                 height: 70,
                 incomingColor: bottomContainerColor,
