@@ -1,16 +1,18 @@
 // lib/cards/reusable_cards.dart
 import 'package:flutter/material.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ReusableCards extends StatelessWidget {
-  // const ReusableCards(this.incomingColor, {required this.width, super.key});
   const ReusableCards({
     this.incomingColor = const Color(0xFF1D1E33),
+    required this.cardChild,
     this.width=double.infinity,
     this.height = 200,
     super.key,
   });
 
   final double width;
+  final Widget cardChild;
   final double height;
   final Color incomingColor;
 
@@ -25,6 +27,7 @@ class ReusableCards extends StatelessWidget {
         // color: const Color.fromARGB(255, 27, 28, 43),
         borderRadius: BorderRadius.circular(10),
       ),
+      child: cardChild,
     );
   }
 }

@@ -1,9 +1,11 @@
 // lib/screens/input_page.dart
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/cards/reusable_cards.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const double reusableCardsheight = 200;
 const double reusableCardswidth = 200;
+const Color bottomContainerColor = Color.fromARGB(255, 245, 1, 0);
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -31,6 +33,26 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCards(
+                      cardChild: Container(
+                        margin: EdgeInsets.all(20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.male,
+                              ),
+                              Text(
+                                "Male",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                       width: reusableCardsheight,
                       height: reusableCardsheight,
                       incomingColor: Colors.blue,
@@ -38,13 +60,38 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCards(
-                        width: reusableCardsheight,
-                        height: reusableCardsheight),
+                      cardChild: Container(
+                        margin: EdgeInsets.all(20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Icon(Icons.female),
+                              Text(
+                                "Female",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      width: reusableCardsheight,
+                      incomingColor: Colors.pink,
+                      height: reusableCardsheight,
+                    ),
                   ),
                 ],
               ),
               Expanded(
                 child: ReusableCards(
+                  cardChild: Column(
+                    children: [
+                      
+                    ],
+                  ),
                   height: reusableCardsheight,
                 ),
               ),
@@ -52,19 +99,36 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCards(
-                        width: reusableCardsheight,
-                        height: reusableCardsheight),
+                      cardChild: Column(
+                        children: [
+                          
+                        ],
+                      ),
+                      width: reusableCardsheight,
+                      height: reusableCardsheight,
+                    ),
                   ),
                   Expanded(
                     child: ReusableCards(
-                        width: reusableCardsheight,
-                        height: reusableCardsheight),
+                      cardChild: Column(
+                        children: [
+                          
+                        ],
+                      ),
+                      width: reusableCardsheight,
+                      height: reusableCardsheight,
+                    ),
                   ),
                 ],
               ),
               ReusableCards(
+                cardChild: Column(
+                  children: [
+                    
+                  ],
+                ),
                 height: 70,
-                incomingColor: const Color.fromARGB(255, 234, 17, 75),
+                incomingColor: bottomContainerColor,
               ),
             ],
           ),
