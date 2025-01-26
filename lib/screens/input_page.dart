@@ -4,6 +4,8 @@ import 'package:bmi_calculator/cards/reusable_cards.dart';
 import 'package:bmi_calculator/cards/icon_content.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+enum GenderEnum { male, female }
+
 const double reusableCardsheight = 200;
 const Color bottomContainerColor = Color.fromARGB(255, 245, 1, 0);
 
@@ -17,6 +19,21 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color _maleCardColor = Colors.indigoAccent;
   Color _femaleCardColor = Colors.pinkAccent;
+
+  void cardColorChanger(GenderEnum enteredGenderColor) {
+    if (enteredGenderColor == GenderEnum.male) {
+      _maleCardColor = _maleCardColor == Colors.indigoAccent
+          ? Colors.indigo
+          : Colors.indigoAccent;
+      _femaleCardColor = Colors.pinkAccent;
+    }
+    if (enteredGenderColor == GenderEnum.female) {
+      _femaleCardColor = _femaleCardColor == Colors.pinkAccent
+          ? Colors.pink
+          : Colors.pinkAccent;
+      _maleCardColor = Colors.indigoAccent;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +55,7 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _maleCardColor = _maleCardColor == Colors.indigoAccent
-                              ? Colors.indigo
-                              : Colors.indigoAccent;
-                          _femaleCardColor = Colors.pinkAccent;
+                          cardColorChanger(GenderEnum.male);
                         });
                       },
                       child: ReusableCards(
@@ -58,11 +72,7 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _femaleCardColor =
-                              _femaleCardColor == Colors.pinkAccent
-                                  ? Colors.pink
-                                  : Colors.pinkAccent;
-                          _maleCardColor = Colors.indigoAccent;
+                          cardColorChanger(GenderEnum.female);
                         });
                       },
                       child: ReusableCards(
