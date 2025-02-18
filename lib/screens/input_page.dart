@@ -14,8 +14,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color _maleCardColor = Colors.indigoAccent;
-  Color _femaleCardColor = Colors.pinkAccent;
+  Color _maleCardColor = kMaleColor;
+  Color _femaleCardColor = kFemaleColor;
 
   void cardColorChanger(GenderEnum enteredGenderColor) {
     if (enteredGenderColor == GenderEnum.male) {
