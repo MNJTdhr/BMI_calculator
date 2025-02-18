@@ -8,3 +8,6 @@ const Color kBottomContainerColor = Color.fromARGB(255, 245, 1, 0);
 
 const double kIconSize = 100;
 const kTextStyling = TextStyle(fontSize: 20, color: Colors.white);
+
+const double kFontSize = 50;
+const kFontWeight = FontWeight.bold;

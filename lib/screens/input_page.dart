@@ -88,7 +88,16 @@ class _InputPageState extends State<InputPage> {
                 child: ReusableCards(
                   onPress: () {},
                   cardChild: Column(
-                    children: [],
+                    children: [
+                      Text("Height"),
+                      Text(
+                        "180",
+                        style: TextStyle(
+                          fontSize: kFontSize,
+                          fontWeight: kFontWeight,
+                        ),
+                      ),
+                    ],
                   ),
                   height: kReusableCardsheight,
                 ),
@@ -101,7 +110,6 @@ class _InputPageState extends State<InputPage> {
                       cardChild: Column(
                         children: [],
                       ),
-                      width: kReusableCardsheight,
                       height: kReusableCardsheight,
                     ),
                   ),
@@ -111,7 +119,6 @@ class _InputPageState extends State<InputPage> {
                       cardChild: Column(
                         children: [],
                       ),
-                      width: kReusableCardsheight,
                       height: kReusableCardsheight,
                     ),
                   ),
