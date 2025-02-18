@@ -2,11 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/cards/reusable_cards.dart';
 import 'package:bmi_calculator/cards/icon_content.dart';
+import 'package:bmi_calculator/assets/constants.dart';
 
 enum GenderEnum { male, female }
-
-const double reusableCardsheight = 200;
-const Color bottomContainerColor = Color.fromARGB(255, 245, 1, 0);
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -63,7 +61,7 @@ class _InputPageState extends State<InputPage> {
                         incomingIcon: Icons.male,
                         incomingIconName: "MALE",
                       ),
-                      height: reusableCardsheight,
+                      height: kReusableCardsheight,
                       incomingColor: _maleCardColor,
                     ),
                   ),
@@ -80,7 +78,7 @@ class _InputPageState extends State<InputPage> {
                         incomingIcon: Icons.female,
                         incomingIconName: "FEMALE",
                       ),
-                      height: reusableCardsheight,
+                      height: kReusableCardsheight,
                       incomingColor: _femaleCardColor,
                     ),
                   ),
@@ -92,7 +90,7 @@ class _InputPageState extends State<InputPage> {
                   cardChild: Column(
                     children: [],
                   ),
-                  height: reusableCardsheight,
+                  height: kReusableCardsheight,
                 ),
               ),
               Row(
@@ -103,8 +101,8 @@ class _InputPageState extends State<InputPage> {
                       cardChild: Column(
                         children: [],
                       ),
-                      width: reusableCardsheight,
-                      height: reusableCardsheight,
+                      width: kReusableCardsheight,
+                      height: kReusableCardsheight,
                     ),
                   ),
                   Expanded(
@@ -113,8 +111,8 @@ class _InputPageState extends State<InputPage> {
                       cardChild: Column(
                         children: [],
                       ),
-                      width: reusableCardsheight,
-                      height: reusableCardsheight,
+                      width: kReusableCardsheight,
+                      height: kReusableCardsheight,
                     ),
                   ),
                 ],
@@ -125,7 +123,7 @@ class _InputPageState extends State<InputPage> {
                   children: [],
                 ),
                 height: 70,
-                incomingColor: bottomContainerColor,
+                incomingColor: kBottomContainerColor,
               ),
             ],
           ),

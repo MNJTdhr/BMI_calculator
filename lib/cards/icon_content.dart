@@ -1,8 +1,6 @@
 // lib/cards/icon_content.dart
 import 'package:flutter/material.dart';
-
-const double iconSize = 100;
-const textStyling = TextStyle(fontSize: 20, color: Colors.white);
+import 'package:bmi_calculator/assets/constants.dart';
 
 class IconContent extends StatelessWidget {
   const IconContent({
@@ -21,14 +19,14 @@ class IconContent extends StatelessWidget {
       children: [
         Icon(
           incomingIcon,
-          size: iconSize,
+          size: kIconSize,
         ),
         SizedBox(
           height: 7,
         ),
         Text(
           incomingIconName,
-          style: textStyling,
+          style: kTextStyling,
         ),
       ],
     );
