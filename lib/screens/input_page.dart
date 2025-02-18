@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/cards/reusable_cards.dart';
 import 'package:bmi_calculator/cards/icon_content.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum GenderEnum { male, female }
 
@@ -52,43 +51,44 @@ class _InputPageState extends State<InputPage> {
               Row(
                 children: [
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          cardColorChanger(GenderEnum.male);
-                        });
+                    child: ReusableCards(
+                      onPress: () {
+                        setState(
+                          () {
+                            cardColorChanger(GenderEnum.male);
+                          },
+                        );
                       },
-                      child: ReusableCards(
-                        cardChild: IconContent(
-                          incomingIcon: Icons.male,
-                          incomingIconName: "MALE",
-                        ),
-                        height: reusableCardsheight,
-                        incomingColor: _maleCardColor,
+                      cardChild: IconContent(
+                        incomingIcon: Icons.male,
+                        incomingIconName: "MALE",
                       ),
+                      height: reusableCardsheight,
+                      incomingColor: _maleCardColor,
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          cardColorChanger(GenderEnum.female);
-                        });
+                    child: ReusableCards(
+                      onPress: () {
+                        setState(
+                          () {
+                            cardColorChanger(GenderEnum.female);
+                          },
+                        );
                       },
-                      child: ReusableCards(
-                        cardChild: IconContent(
-                          incomingIcon: Icons.female,
-                          incomingIconName: "FEMALE",
-                        ),
-                        height: reusableCardsheight,
-                        incomingColor: _femaleCardColor,
+                      cardChild: IconContent(
+                        incomingIcon: Icons.female,
+                        incomingIconName: "FEMALE",
                       ),
+                      height: reusableCardsheight,
+                      incomingColor: _femaleCardColor,
                     ),
                   ),
                 ],
               ),
               Expanded(
                 child: ReusableCards(
+                  onPress: () {},
                   cardChild: Column(
                     children: [],
                   ),
@@ -99,6 +99,7 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCards(
+                      onPress: () {},
                       cardChild: Column(
                         children: [],
                       ),
@@ -108,6 +109,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCards(
+                      onPress: () {},
                       cardChild: Column(
                         children: [],
                       ),
@@ -118,6 +120,7 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
               ReusableCards(
+                onPress: () {},
                 cardChild: Column(
                   children: [],
                 ),
