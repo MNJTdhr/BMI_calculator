@@ -16,6 +16,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color _maleCardColor = kMaleColor;
   Color _femaleCardColor = kFemaleColor;
+  num height = kDefaultHeight;
 
   void cardColorChanger(GenderEnum enteredGenderColor) {
     if (enteredGenderColor == GenderEnum.male) {
@@ -88,14 +89,38 @@ class _InputPageState extends State<InputPage> {
                 child: ReusableCards(
                   onPress: () {},
                   cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Height"),
                       Text(
-                        "180",
-                        style: TextStyle(
-                          fontSize: kFontSize,
-                          fontWeight: kFontWeight,
-                        ),
+                        "Height",
+                        style: kLabelTextStyle,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Text(
+                            height.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Text(
+                            "cm",
+                            style: kLabelTextStyle,
+                          ),
+                        ],
+                      ),
+                      Slider(
+                        value: height.toDouble(),
+                        min: kMinHeight,
+                        max: kMaxHeight,
+                        activeColor: const Color.fromARGB(255, 245, 0, 0),
+                        inactiveColor: Colors.white,
+                        onChanged: (double newValue) {
+                          setState(() {
+                            height = newValue.toInt();
+                          });
+                        },
                       ),
                     ],
                   ),
