@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/cards/reusable_cards.dart';
 import 'package:bmi_calculator/cards/icon_content.dart';
 import 'package:bmi_calculator/assets/constants.dart';
+import 'package:bmi_calculator/cards/customized_button.dart';
 
 enum GenderEnum { male, female }
 
@@ -17,6 +18,8 @@ class _InputPageState extends State<InputPage> {
   Color _maleCardColor = kMaleColor;
   Color _femaleCardColor = kFemaleColor;
   num height = kDefaultHeight;
+  int weight = kDefaultweight;
+  int age = kDefaultage;
 
   void cardColorChanger(GenderEnum enteredGenderColor) {
     if (enteredGenderColor == GenderEnum.male) {
@@ -142,7 +145,39 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCards(
                       onPress: () {},
                       cardChild: Column(
-                        children: [],
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Weight",
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            weight.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomizedButton(
+                                incomingIcon: Icons.add,
+                                onPress: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
+                              ),
+                              SizedBox(width: 10),
+                              CustomizedButton(
+                                incomingIcon: Icons.remove,
+                                onPress: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
+                              ),
+                            ],
+                          )
+                        ],
                       ),
                       height: kReusableCardsheight,
                     ),
@@ -151,8 +186,41 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCards(
                       onPress: () {},
                       cardChild: Column(
-                        children: [],
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Weight",
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            weight.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomizedButton(
+                                incomingIcon: Icons.add,
+                                onPress: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
+                              ),
+                              SizedBox(width: 10),
+                              CustomizedButton(
+                                incomingIcon: Icons.remove,
+                                onPress: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
+                              ),
+                            ],
+                          )
+                        ],
                       ),
+                      
                       height: kReusableCardsheight,
                     ),
                   ),

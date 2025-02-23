@@ -10,6 +10,8 @@ const double kIconSize = 100;
 const double kMaxHeight = 220;
 const double kDefaultHeight = 150;
 const double kMinHeight = 100;
+const int kDefaultweight=50;
+const int kDefaultage=50;
 
 const kLabelTextStyle = TextStyle(
   fontSize: 20,
