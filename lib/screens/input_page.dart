@@ -95,7 +95,7 @@ class _InputPageState extends State<InputPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Height",
+                        "HEIGHT",
                         style: kLabelTextStyle,
                       ),
                       Row(
@@ -148,7 +148,7 @@ class _InputPageState extends State<InputPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Weight",
+                            "WEIGHT",
                             style: kLabelTextStyle,
                           ),
                           Text(
@@ -189,11 +189,11 @@ class _InputPageState extends State<InputPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Weight",
+                            "AGE",
                             style: kLabelTextStyle,
                           ),
                           Text(
-                            weight.toString(),
+                            age.toString(),
                             style: kNumberTextStyle,
                           ),
                           Row(
@@ -203,7 +203,7 @@ class _InputPageState extends State<InputPage> {
                                 incomingIcon: Icons.add,
                                 onPress: () {
                                   setState(() {
-                                    weight++;
+                                    age++;
                                   });
                                 },
                               ),
@@ -212,7 +212,7 @@ class _InputPageState extends State<InputPage> {
                                 incomingIcon: Icons.remove,
                                 onPress: () {
                                   setState(() {
-                                    weight--;
+                                    age--;
                                   });
                                 },
                               ),
