@@ -38,204 +38,197 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.black,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 19, 37),
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("BMI Calculator")),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("BMI Calculator")),
-        ),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: ReusableCards(
-                      onPress: () {
-                        setState(
-                          () {
-                            cardColorChanger(GenderEnum.male);
-                          },
-                        );
-                      },
-                      cardChild: IconContent(
-                        incomingIcon: Icons.male,
-                        incomingIconName: "MALE",
-                      ),
-                      height: kReusableCardsheight,
-                      incomingColor: _maleCardColor,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: ReusableCards(
+                    onPress: () {
+                      setState(
+                        () {
+                          cardColorChanger(GenderEnum.male);
+                        },
+                      );
+                    },
+                    cardChild: IconContent(
+                      incomingIcon: Icons.male,
+                      incomingIconName: "MALE",
                     ),
+                    height: kReusableCardsheight,
+                    incomingColor: _maleCardColor,
                   ),
-                  Expanded(
-                    child: ReusableCards(
-                      onPress: () {
-                        setState(
-                          () {
-                            cardColorChanger(GenderEnum.female);
-                          },
-                        );
-                      },
-                      cardChild: IconContent(
-                        incomingIcon: Icons.female,
-                        incomingIconName: "FEMALE",
-                      ),
-                      height: kReusableCardsheight,
-                      incomingColor: _femaleCardColor,
-                    ),
-                  ),
-                ],
-              ),
-              Expanded(
-                child: ReusableCards(
-                  onPress: () {},
-                  cardChild: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "HEIGHT",
-                        style: kLabelTextStyle,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.baseline,
-                        textBaseline: TextBaseline.alphabetic,
-                        children: [
-                          Text(
-                            height.toString(),
-                            style: kNumberTextStyle,
-                          ),
-                          Text(
-                            "cm",
-                            style: kLabelTextStyle,
-                          ),
-                        ],
-                      ),
-                      SliderTheme(
-                        data: SliderTheme.of(context).copyWith(
-                          activeTrackColor: Colors.white,
-                          thumbColor: Colors.redAccent,
-                          overlayColor: Colors.red,
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 10),
-                          overlayShape:
-                              RoundSliderOverlayShape(overlayRadius: 15),
-                        ),
-                        child: Slider(
-                          value: height.toDouble(),
-                          min: kMinHeight,
-                          max: kMaxHeight,
-                          onChanged: (double newValue) {
-                            setState(() {
-                              height = newValue.toInt();
-                            });
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                  height: kReusableCardsheight,
                 ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: ReusableCards(
-                      onPress: () {},
-                      cardChild: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "WEIGHT",
-                            style: kLabelTextStyle,
-                          ),
-                          Text(
-                            weight.toString(),
-                            style: kNumberTextStyle,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CustomizedButton(
-                                incomingIcon: Icons.add,
-                                onPress: () {
-                                  setState(() {
-                                    weight++;
-                                  });
-                                },
-                              ),
-                              SizedBox(width: 10),
-                              CustomizedButton(
-                                incomingIcon: Icons.remove,
-                                onPress: () {
-                                  setState(() {
-                                    weight--;
-                                  });
-                                },
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      height: kReusableCardsheight,
+                Expanded(
+                  child: ReusableCards(
+                    onPress: () {
+                      setState(
+                        () {
+                          cardColorChanger(GenderEnum.female);
+                        },
+                      );
+                    },
+                    cardChild: IconContent(
+                      incomingIcon: Icons.female,
+                      incomingIconName: "FEMALE",
                     ),
+                    height: kReusableCardsheight,
+                    incomingColor: _femaleCardColor,
                   ),
-                  Expanded(
-                    child: ReusableCards(
-                      onPress: () {},
-                      cardChild: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "AGE",
-                            style: kLabelTextStyle,
-                          ),
-                          Text(
-                            age.toString(),
-                            style: kNumberTextStyle,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CustomizedButton(
-                                incomingIcon: Icons.add,
-                                onPress: () {
-                                  setState(() {
-                                    age++;
-                                  });
-                                },
-                              ),
-                              SizedBox(width: 10),
-                              CustomizedButton(
-                                incomingIcon: Icons.remove,
-                                onPress: () {
-                                  setState(() {
-                                    age--;
-                                  });
-                                },
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      
-                      height: kReusableCardsheight,
-                    ),
-                  ),
-                ],
-              ),
-              ReusableCards(
+                ),
+              ],
+            ),
+            Expanded(
+              child: ReusableCards(
                 onPress: () {},
                 cardChild: Column(
-                  children: [],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "HEIGHT",
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          height.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Text(
+                          "cm",
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
+                    SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        activeTrackColor: Colors.white,
+                        thumbColor: Colors.redAccent,
+                        overlayColor: Colors.red,
+                        thumbShape:
+                            RoundSliderThumbShape(enabledThumbRadius: 10),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 15),
+                      ),
+                      child: Slider(
+                        value: height.toDouble(),
+                        min: kMinHeight,
+                        max: kMaxHeight,
+                        onChanged: (double newValue) {
+                          setState(() {
+                            height = newValue.toInt();
+                          });
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                height: 70,
-                incomingColor: kBottomContainerColor,
+                height: kReusableCardsheight,
               ),
-            ],
-          ),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: ReusableCards(
+                    onPress: () {},
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "WEIGHT",
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomizedButton(
+                              incomingIcon: Icons.add,
+                              onPress: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            CustomizedButton(
+                              incomingIcon: Icons.remove,
+                              onPress: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    height: kReusableCardsheight,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCards(
+                    onPress: () {},
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "AGE",
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomizedButton(
+                              incomingIcon: Icons.add,
+                              onPress: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            CustomizedButton(
+                              incomingIcon: Icons.remove,
+                              onPress: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    height: kReusableCardsheight,
+                  ),
+                ),
+              ],
+            ),
+            ReusableCards(
+              onPress: () {},
+              cardChild: Column(
+                children: [],
+              ),
+              height: 70,
+              incomingColor: kBottomContainerColor,
+            ),
+          ],
         ),
       ),
     );
