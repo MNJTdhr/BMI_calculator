@@ -1,9 +1,11 @@
 // lib/screens/input_page.dart
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/cards/reusable_cards.dart';
 import 'package:bmi_calculator/cards/icon_content.dart';
 import 'package:bmi_calculator/assets/constants.dart';
 import 'package:bmi_calculator/cards/customized_button.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 
 enum GenderEnum { male, female }
 
@@ -222,7 +224,19 @@ class _InputPageState extends State<InputPage> {
             ),
             ReusableCards(
               onPress: () {
-                Navigator.pushNamed(context, '/calculate');
+                CalculatorBrain calcObj =
+                    CalculatorBrain(height: height, weight: weight);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(
+                      getResult: calcObj.getResult(),
+                      calculateBMI: calcObj.calculateBMI(),
+                      getRecom: calcObj.getRecom(),
+                    ),
+                  ),
+                );
               },
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -1,9 +1,19 @@
+// lib/screens/results_page.dart
 import 'package:bmi_calculator/cards/reusable_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/assets/constants.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  const ResultsPage({
+    required this.getRecom,
+    required this.calculateBMI,
+    required this.getResult,
+    super.key,
+  });
+
+  final String getResult;
+  final String calculateBMI;
+  final String getRecom;
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +53,15 @@ class ResultsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "NORMAL",
+                      getResult.toUpperCase(),
                       style: kBMIResultIndicator,
                     ),
                     Text(
-                      "100",
+                      calculateBMI,
                       style: kBMIResultValue,
                     ),
                     Text(
-                      "You need to eat more",
+                      getRecom.toUpperCase(),
                       style: kBMIResultSugg,
                     ),
                   ],
