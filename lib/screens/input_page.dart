@@ -221,9 +221,22 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
             ReusableCards(
-              onPress: () {},
+              onPress: () {
+                Navigator.pushNamed(context, '/calculate');
+              },
               cardChild: Column(
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Text(
+                      "CALCULATE",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               height: 70,
               incomingColor: kBottomContainerColor,
